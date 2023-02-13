@@ -1,8 +1,10 @@
 package com.example.listofmarket.domain
 
+import androidx.lifecycle.LiveData
+
 interface ShopListRep {
 
-    fun getShopList(): List<ShopItem>
+    fun getShopList(): LiveData<List<ShopItem>>
 
     fun addElemShop(shopItem: ShopItem)
 

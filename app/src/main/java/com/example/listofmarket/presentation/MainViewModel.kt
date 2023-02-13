@@ -12,14 +12,18 @@ import com.example.listofmarket.domain.ShopItem
 class MainViewModel : ViewModel() {
     private val repository = ShopListRepImpl
 
-    private val getShopListUseCase = GetShopList(repository)
-    private val deleteElemShopListUseCase = DeleteElemShopList(repository)
-    private val editElemShopListUseCase = EditElemShopList(repository)
+    private val getShopList = GetShopList(repository)
+    private val deleteElemShopList = DeleteElemShopList(repository)
+    private val editElemShopList = EditElemShopList(repository)
 
-    val shopList = MutableLiveData<List<ShopItem>>()
+    val shopList = getShopList.getShopList()
 
-    fun getShopList() {
-        val list = getShopListUseCase.getShopList()
-        shopList.value = list
+    fun deleteElemShop(shopItem: ShopItem) {
+        deleteElemShopList.deleteElemShop(shopItem)
+    }
+
+    fun changeEnableState(shopItem: ShopItem) {
+        val newItem = shopItem.copy(enabled = !shopItem.enabled)
+        editElemShopList.editElemShop(newItem)
     }
 }
