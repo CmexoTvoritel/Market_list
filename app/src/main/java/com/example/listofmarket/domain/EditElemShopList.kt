@@ -1,7 +1,7 @@
 package com.example.listofmarket.domain
 
-class EditElemShopList {
+class EditElemShopList(private val shopListRep: ShopListRep) {
     fun editElemShop(shopItem: ShopItem) {
-        TODO()
+        shopListRep.editElemShop(shopItem)
     }
 }

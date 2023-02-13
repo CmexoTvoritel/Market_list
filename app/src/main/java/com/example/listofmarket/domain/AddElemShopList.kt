@@ -1,7 +1,7 @@
 package com.example.listofmarket.domain
 
-class AddElemShopList {
+class AddElemShopList(private val shopListRep: ShopListRep) {
     fun addElemShop(shopItem: ShopItem) {
-        TODO()
+        shopListRep.addElemShop(shopItem)
     }
 }

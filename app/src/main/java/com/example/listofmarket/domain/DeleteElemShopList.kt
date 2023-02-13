@@ -1,7 +1,7 @@
 package com.example.listofmarket.domain
 
-class DeleteElemShopList {
+class DeleteElemShopList(private val shopListRep: ShopListRep) {
     fun deleteElemShop(shopItem: ShopItem) {
-        TODO()
+        shopListRep.deleteElemShop(shopItem)
     }
 }
