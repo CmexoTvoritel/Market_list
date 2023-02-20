@@ -13,7 +13,7 @@ object ShopListRepImpl: ShopListRep {
     private var autoIncrementId = 0
 
     init {
-        for(i in 0 until 10) {
+        for(i in 0 until 1000) {
             val item = ShopItem("Name $i", i, true)
             addElemShop(item)
         }
